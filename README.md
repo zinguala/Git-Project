@@ -1,7 +1,4 @@
 #Code By Aviv Singer
-
-Hello all!
-This code created for organizing files in a directory please use with caution and read instructions first.
 THIS IS A PYTHON SCRIPT THAT AUTOMATES THE PROCESS OF ORGANIZING FILES IN A
 DIRECTORY BASED ON THEIR FILE TYPES AUDIO,IMAGE,DOCUMENT,SCRIPT,VIDEO:
 1. SCANS A SPECIFIED DIRECTORY FOR FILES. WHICH WE ENTER AS INPUT
