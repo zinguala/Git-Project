@@ -12,9 +12,10 @@ video = ['webm','mkv','flv','flv','vob','ogv','ogg','drc','gif','gifv','mng','av
 
 document = ['doc','fb2','md','docx','odt','sxw','pages','pdf','ps','rtf','wp7','wp','wpd','txt','text'] #all document formats we want to rearrange
 
+script = ['py','sh',] # script formats we want to rearrange
+
 current_wd = os.getcwd()      # saving our current working directory
-files = os.listdir(".")
-print (files)
+files = os.listdir(".")         
 for file in files:
     file_ = file.split('.')
     old_file_path = (str(current_wd) + '/' + str(file))
@@ -47,6 +48,14 @@ for file in files:
             file_destination = (str(current_wd) + '/document/' + str(file))
             if os.path.isdir(str(current_wd) + '/document') == False:
                 os.mkdir(str(current_wd) + '/document')
+                os.rename(old_file_path,file_destination)
+            else: 
+                os.rename(old_file_path,file_destination)
+
+        elif file_[len(file_) -1 ] in script:
+            file_destination = (str(current_wd) + '/script/' + str(file))
+            if os.path.isdir(str(current_wd) + '/script') == False:
+                os.mkdir(str(current_wd) + '/script')
                 os.rename(old_file_path,file_destination)
             else: 
                 os.rename(old_file_path,file_destination)
