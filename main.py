@@ -15,57 +15,57 @@ document = ['doc','fb2','md','docx','odt','sxw','pages','pdf','ps','rtf','wp7','
 script = ['py','sh',] # script formats we want to rearrange
 
 current_wd = os.getcwd()      # saving our current working directory
-files = os.listdir(".")         
-for file in files:
-    file_ = file.split('.')
-    old_file_path = (str(current_wd) + '/' + str(file))
-    if os.path.isfile(old_file_path):
-        if file_[len(file_) -1 ] in image:
-            file_destination = (str(current_wd) + '/image/' + str(file))
-            if os.path.isdir(str(current_wd) + '/image') == False:
-                os.mkdir(str(current_wd) + '/image')
-                os.rename(old_file_path,file_destination)
+files = os.listdir(".")        # saving a list of all files in the current directory
+for file in files:             # for going over all items in the current directory
+    file_ = file.split('.')     # splits and saves the filename in a list   
+    old_file_path = (str(current_wd) + '/' + str(file))  # saving the current path
+    if os.path.isfile(old_file_path):    # check if we are pointing on a file and not directory
+        if file_[len(file_) -1 ] in image:     #  check if the file is image
+            file_destination = (str(current_wd) + '/image/' + str(file))  # change the destenation to image dir
+            if os.path.isdir(str(current_wd) + '/image') == False:  #check if the dir exits
+                os.mkdir(str(current_wd) + '/image')                # if dir not exists create it 
+                os.rename(old_file_path,file_destination)          # move the file to the dir
             else: 
-                os.rename(old_file_path,file_destination)
+                os.rename(old_file_path,file_destination)           # if the dir exists just move the file to the dir
         
-        elif file_[len(file_) -1 ] in audio:
-            file_destination = (str(current_wd) + '/audio/' + str(file))
-            if os.path.isdir(str(current_wd) + '/audio') == False:
-                os.mkdir(str(current_wd) + '/audio')
-                os.rename(old_file_path,file_destination)
+        elif file_[len(file_) -1 ] in audio:       #  check if the file is audio
+            file_destination = (str(current_wd) + '/audio/' + str(file))  # change the destenation to audio dir
+            if os.path.isdir(str(current_wd) + '/audio') == False:   #check if the dir exists
+                os.mkdir(str(current_wd) + '/audio')                 # if dir not exists create it 
+                os.rename(old_file_path,file_destination)             # move the file to the dir
             else: 
-                os.rename(old_file_path,file_destination)
+                os.rename(old_file_path,file_destination)              # if the dir exists just move the file to the dir
 
-        elif file_[len(file_) -1 ] in video:
-            file_destination = (str(current_wd) + '/video/' + str(file))
-            if os.path.isdir(str(current_wd) + '/video') == False:
-                os.mkdir(str(current_wd) + '/video')
-                os.rename(old_file_path,file_destination)
+        elif file_[len(file_) -1 ] in video:          #  check if the file is video
+            file_destination = (str(current_wd) + '/video/' + str(file))  # change the destenation to video dir
+            if os.path.isdir(str(current_wd) + '/video') == False:     #check if the dir exists
+                os.mkdir(str(current_wd) + '/video')                   # if dir not exists create it 
+                os.rename(old_file_path,file_destination)               # move the file to the dir
             else: 
-                os.rename(old_file_path,file_destination)
+                os.rename(old_file_path,file_destination)               # if the dir exists just move the file to the dir
 
-        elif file_[len(file_) -1 ] in document:
-            file_destination = (str(current_wd) + '/document/' + str(file))
-            if os.path.isdir(str(current_wd) + '/document') == False:
-                os.mkdir(str(current_wd) + '/document')
-                os.rename(old_file_path,file_destination)
+        elif file_[len(file_) -1 ] in document:         #  check if the file is document
+            file_destination = (str(current_wd) + '/document/' + str(file))  # change the destenation to document dir
+            if os.path.isdir(str(current_wd) + '/document') == False:       #check if the dir exists
+                os.mkdir(str(current_wd) + '/document')                     # if dir not exists create it 
+                os.rename(old_file_path,file_destination)                   # move the file to the dir
             else: 
-                os.rename(old_file_path,file_destination)
+                os.rename(old_file_path,file_destination)                   # if the dir exists just move the file to the dir
 
-        elif file_[len(file_) -1 ] in script:
-            file_destination = (str(current_wd) + '/script/' + str(file))
-            if os.path.isdir(str(current_wd) + '/script') == False:
-                os.mkdir(str(current_wd) + '/script')
-                os.rename(old_file_path,file_destination)
+        elif file_[len(file_) -1 ] in script:            #  check if the file is script
+            file_destination = (str(current_wd) + '/script/' + str(file))  # change the destenation to script dir
+            if os.path.isdir(str(current_wd) + '/script') == False:         #check if the dir exists
+                os.mkdir(str(current_wd) + '/script')                      # if dir not exists create it 
+                os.rename(old_file_path,file_destination)                   # move the file to the dir
             else: 
-                os.rename(old_file_path,file_destination)
+                os.rename(old_file_path,file_destination)                 # if the dir exists just move the file to the dir
 
-        else:
-            file_destination = (str(current_wd) + '/others/' + str(file))
-            if os.path.isdir(str(current_wd) + '/others') == False:
-                os.mkdir(str(current_wd) + '/others')
-                os.rename(old_file_path,file_destination)
+        else:                                                           # all other filetypes
+            file_destination = (str(current_wd) + '/others/' + str(file))  # change the destenation to others dir
+            if os.path.isdir(str(current_wd) + '/others') == False:        #check if the dir exists
+                os.mkdir(str(current_wd) + '/others')                    # if dir not exists create it 
+                os.rename(old_file_path,file_destination)                # move the file to the dir
             else: 
-                os.rename(old_file_path,file_destination)
+                os.rename(old_file_path,file_destination)               # if the dir exists just move the file to the dir
         
     
